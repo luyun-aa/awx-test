@@ -1,0 +1,11 @@
+---
+- name: awx test
+  hosts: hosts
+  remote_user: ubuntu
+  tasks:
+  - name: list files in home directory
+    command: ls -lht ~/
+  - name: Creates directory
+    file:
+      path: ~/www
+      state: directory
