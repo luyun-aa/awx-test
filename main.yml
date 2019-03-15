@@ -1,6 +1,6 @@
 ---
 - name: awx test
-  hosts: hosts
+  hosts: abc
   remote_user: ubuntu
   tasks:
   - name: list files in home directory
@@ -9,3 +9,7 @@
     file:
       path: ~/www
       state: directory
+  - name: create credential file
+    copy:
+      src: credentials.ini
+      dst: ~/www/credentials.ini
